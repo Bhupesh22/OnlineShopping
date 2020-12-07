@@ -7,6 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import {ForgotserviceService} from './services/forgotservice.service';
+import {HttpClientModule} from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminserviceService } from './services/adminservice.service';
+import { RetailerloginComponent } from './retailerlogin/retailerlogin.component';
+import { RetailerloginService } from './services/retailerlogin.service';
+import { AddproductdetailsComponent } from './addproductdetails/addproductdetails.component';
+import { AddproductdetailsService } from './services/addproductdetails.service';
 
 @NgModule({
   declarations: [
@@ -14,14 +23,19 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    AdminComponent,
+    AdminloginComponent,
+    RetailerloginComponent,
+    AddproductdetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ForgotserviceService,AdminserviceService,RetailerloginService,AddproductdetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
